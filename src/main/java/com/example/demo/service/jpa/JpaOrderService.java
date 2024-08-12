@@ -1,6 +1,6 @@
 package com.example.demo.service.jpa;
 
-import com.example.demo.annotations.Log;
+import com.example.demo.annotations.Exception;
 import com.example.demo.model.Order;
 import com.example.demo.model.User;
 import com.example.demo.repository.JpaOrderRepository;
@@ -20,11 +20,11 @@ public class JpaOrderService implements OrderService {
     private final JpaUserRepository userRepository;
 
     @Override
+    @Exception
     public Order createOrder(Long userId, Order order) {
-
         User user = userRepository.findById(userId).orElse(null);
         if (user == null) {
-            throw new RuntimeException("User does not exists");
+         throw new RuntimeException("User does not exists");
         }
         order.setUser(user);
         return orderRepository.save(order);

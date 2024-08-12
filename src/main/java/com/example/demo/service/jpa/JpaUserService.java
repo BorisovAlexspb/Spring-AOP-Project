@@ -1,7 +1,6 @@
 package com.example.demo.service.jpa;
 
 import com.example.demo.model.User;
-import com.example.demo.repository.JpaOrderRepository;
 import com.example.demo.repository.JpaUserRepository;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
