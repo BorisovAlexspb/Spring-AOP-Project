@@ -1,6 +1,6 @@
-#Документация
+<h1>Документация</h1>
 
-##Реализация логирования
+<h2>Реализация логирования</h2>
 
 Логика реализована в классе `LoggingAspect`.
 Что логируется:
@@ -9,7 +9,7 @@
 - вызовы методов create*(..)
 - вызов исключений
 
-##Примеры pointcut
+<h3>Примеры pointcut</h3>
 - поинткат на вызов исключения
 ```
 @Pointcut("@annotation(com.example.demo.annotations.Exception)")
@@ -22,7 +22,7 @@ public void exceptionPointcut() {
   public void logPointcutServicesForGetMethod() {
 }
 ```
-##Примеры advice
+<h3>Примеры advice</h3>
 
 - Логирование перед выполнением метода create*(..)
 ```
