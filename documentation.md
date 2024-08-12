@@ -10,13 +10,14 @@
 - вызов исключений
 
 <h3>Примеры pointcut</h3>
-- поинткат на вызов исключения
+
+- Поинткат на вызов исключения
 ```
 @Pointcut("@annotation(com.example.demo.annotations.Exception)")
 public void exceptionPointcut() {
 }
 ```
-- поинткат на метод get*(..)
+- Поинткат на метод get*(..)
 ```
 @Pointcut("execution(* com.example.demo.service.jpa.*.get*(..))")
   public void logPointcutServicesForGetMethod() {
