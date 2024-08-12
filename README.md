@@ -9,45 +9,41 @@
 
 Для запуска приложения необходимо перейти в корень проекта и выполнить команды:
 
-bash
+```
 mvn install
 mvn spring-boot:run
-
+```
 ### Запуск базы данных
 
-В проекте используется база данных PostgreSQL. В файле application.properties необходимо указать URL, имя пользователя и пароль. Затем выполните команду:
-
-bash
+В проекте используется база данных PostgreSQL. В файле `application.properties` необходимо указать URL, имя пользователя и пароль. Затем выполните команду:
+```
 docker-compose up
-
+```
 ### Запуск тестов
 
 Для запуска тестов выполните команду:
-
-bash
+```
 mvn test
-
+```
 ## Логирование
 
-Для логирования используется библиотека Log4j2. Конфигурация описана в файле log4j2.xml. Используется базовая конфигурация для вывода логов в консоль.
+Для логирования используется библиотека `Log4j2`. Конфигурация описана в файле `log4j2.xml`. Используется базовая конфигурация для вывода логов в консоль.
 
 ## Примеры логирования
 
 Логирование вызова метода createOrder():
 
-
+```
 main] com.example.demo.aspect.LoggingAspect : Create method <<createOrder>> is running
-
+```
 Логирование выброса исключения:
-
-
+```
 main] com.example.demo.aspect.LoggingAspect : Exception in createOrder method () - User does not exist
-
+```
 ## Примеры тестов
 
 Тест создания пользователя:
-
-java
+```
 @Test
 void testCreateUser() {
     User user = new User();
@@ -57,6 +53,5 @@ void testCreateUser() {
     assertNotNull(result);
     assertEquals(user, result);
 }
+```
 
-
-Теперь текст будет правильно отображаться на GitHub с выделением заголовков, кодом и другими элементами.
