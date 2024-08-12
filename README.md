@@ -18,20 +18,32 @@
   docker-compose up
   ```
 <h3>Запуск тестов</h3>
-Для запуска тестов выполните команду 
-```
-mvn test
-```
+  Для запуска тестов выполните команду 
+  ```
+  mvn test
+  ```
 <h2>Логирование</h2>
-Для логирования используется библиотека `Log4j2`. Конфигурация описана в файле `log4j2.xml`.
-Используется базовая конфигурация для вывода логов в консоль
+  Для логирования используется библиотека `Log4j2`. Конфигурация описана в файле `log4j2.xml`.
+  Используется базовая конфигурация для вывода логов в консоль
 <h2>Примеры логирования</h2>
-Логирование вызова метода `createOrder()`
-```
+  Логирование вызова метода `createOrder()`
+  ```
  main] com.example.demo.aspect.LoggingAspect    : Create method <<createOrder>> is running
-```
-Логирование выброса исключения 
-```
-    main] com.example.demo.aspect.LoggingAspect    : Exception in createOrder method () - User does not exists
-```   
+  ```
+  Логирование выброса исключения 
+  ```
+  main] com.example.demo.aspect.LoggingAspect    : Exception in createOrder method () - User does not exists
+  ```
 <h2>Примеры тестов</h2>
+Тест создания пользователя 
+```
+@Test
+    void testCreateUser() {
+        User user = new User();
+        when(userRepository.save(user)).thenReturn(user);
+
+        User result = userService.createUser(user);
+        assertNotNull(result);
+        assertEquals(user, result);
+    }
+    ```
