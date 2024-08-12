@@ -54,4 +54,16 @@ void testCreateUser() {
     assertEquals(user, result);
 }
 ```
+Тест получения заказа по id
+```
+ @Test
+    void testGetOrderById() {
+        Order order = new Order();
+        when(orderRepository.findById(1L)).thenReturn(Optional.of(order));
 
+        Order foundOrder = orderService.getOrderById(1L);
+
+        assertNotNull(foundOrder);
+        assertEquals(order, foundOrder);
+    }
+```
